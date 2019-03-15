@@ -57,11 +57,11 @@ def genders(N):
     gender =['he','she','him','her','his','hers','male','herself','himself','female','man','woman','men','women',
  'He','She','Him','Her','His','Hers','Male','Female','Man','Woman','Men','Women','HE','SHE','HIM','HER','HIS',
 'HERS','MALE','FEMALE','MAN','WOMAN','MEN','WOMEN']
-    genC=0
+   # genC=0
     for i in gender:
-        New = re.sub('\\b' +i+ '\\b', '█'* len(i), N)
-    
-    return New
+        N = re.sub('\\b' +i+ '\\b', "█"* len(i), N)
+       # genC=genC+1 
+    return N
 def concept(Text,conc):
     syns=wn.synsets(conc)
     synonyms=[]
@@ -96,6 +96,7 @@ def stats(y,q,n,f,dat,file_name):
     Radd=q
     Rname=n
     Rconc=f
+    
     k=dat.split('/')
     data= "project1/files/"+k[2]+".redacted"
     with open(data,'r') as f:
@@ -118,7 +119,7 @@ import glob
 #import main
 
 def mainn(conc, sts):
-    for dat in glob.glob('project1/text/*.txt'):
+    for dat in glob.glob('project1/otherfiles/*.txt'):
         print(dat)
         data=readdata(dat)
         Y,y=dates(data)
@@ -159,3 +160,6 @@ if __name__ == '__main__':
     parser.add_argument("--stats",type=str)
     args = parser.parse_args()
     mainn(args.concept, args.stats)
+
+
+

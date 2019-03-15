@@ -1,3 +1,5 @@
+Bhavana Gopalachary
+Bhavana.Gopalachary-1@ou.edu
 Project1: Redactor
 
 In this project the main aim was to read data from multiple text files present in the directory as well as another directory named otherfiles. After reading the data our main job is to redact i.e black out all the data corresponding to the input tags. They are --names,--dates,--phone,--address,--genders along with another tag named --concept that gives us just a word whose context we have to redact.All this data is considered to be sensitive data and hence the redaction is needed.After the redaction is done,all the redacted text data is put in a new output file. Different kinds of statistics are also found from the redacted text.
@@ -42,3 +44,11 @@ https://www.guru99.com/reading-and-writing-files-in-python.html
 https://pypi.org/project/pyap/
 https://kite.com/python/docs/nltk.Tree.leaf_treeposition
 https://streamhacker.com/2009/02/23/chunk-extraction-with-nltk/
+
+
+Command to run the project1:
+pipenv run python project1/redactor.py --input '*.txt' \--inpu
+t 'otherfiles/*.txt' \--names --dates --addresses --phones \--concept 'kids' \--output 'files/' \--stats stderr
+
+Command to run the test cases:
+pipenv run python -m pytest
